@@ -8,7 +8,7 @@ public interface IContactService {
 	
 	public String saveContact(ContactForm form);
 	public List<ContactForm> viewAllContacts();
-	public ContactForm EditContact(Integer contactId);
+	public ContactForm editContact(Integer contactId);
 	public List<ContactForm> deleteContact(Integer contactId);
 	
 

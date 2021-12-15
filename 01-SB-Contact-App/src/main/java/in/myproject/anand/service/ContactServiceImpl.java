@@ -8,9 +8,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import in.myproject.anand.Repository.ContactRepository;
 import in.myproject.anand.bindings.ContactForm;
 import in.myproject.anand.entity.Contact;
+import in.myproject.anand.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements IContactService {
@@ -20,13 +20,9 @@ public class ContactServiceImpl implements IContactService {
 	
 	@Override
 	public String saveContact(ContactForm form) {
-		System.out.println("-------------------"+form);
-
 		Contact entity=new Contact();
-		
 		BeanUtils.copyProperties(form, entity);
 		entity.setActiveSW("y");
-		
 		Contact save = repo.save(entity);
 		if(save.getContactId()!=null)
 		{
@@ -53,7 +49,7 @@ public class ContactServiceImpl implements IContactService {
 	}
 
 	@Override
-	public ContactForm EditContact(Integer contactId) {
+	public ContactForm editContact(Integer contactId) {
 		Optional<Contact> findById = repo.findById(contactId);
 		if(findById.isPresent())
 		{

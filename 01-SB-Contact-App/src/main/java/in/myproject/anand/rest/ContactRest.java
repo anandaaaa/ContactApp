@@ -20,10 +20,8 @@ public class ContactRest {
 	private IContactService service;
 	
 	@PostMapping("/save")
-	public String savecontacts(@RequestBody ContactForm contactform) {
-		System.out.println(contactform);
-		 String saveContact = service.saveContact(contactform);
-		 return saveContact;
+	public String saveContacts(@RequestBody ContactForm contactform) {
+		 return service.saveContact(contactform);
 	}
 	
 	@GetMapping("/contacts")
@@ -32,8 +30,8 @@ public class ContactRest {
 	}
 	
 	@GetMapping("/edit/{contactId}")
-	public ContactForm EditContacts(@PathVariable Integer contactId ) {
-		return service.EditContact(contactId);
+	public ContactForm editContacts(@PathVariable Integer contactId ) {
+		return service.editContact(contactId);
 	}
 	
 	

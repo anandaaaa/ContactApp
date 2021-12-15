@@ -12,12 +12,14 @@ public class ContactForm {
 	private Long contactNo;
 	private String contactEmail;
 	private String activeSW;
+	private LocalDate createdDate;
+	private LocalDate updatedDate;
+	
+	
 	@Override
 	public String toString() {
 		return "ContactForm [contactId=" + contactId + ", contactName=" + contactName + ", contactNo=" + contactNo
 				+ ", contactEmail=" + contactEmail + ", activeSW=" + activeSW + ", createdDate=" + createdDate
 				+ ", updatedDate=" + updatedDate + "]";
 	}
-	private LocalDate createdDate;
-	private LocalDate updatedDate;
 }
